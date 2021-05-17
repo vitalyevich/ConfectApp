@@ -362,7 +362,7 @@ namespace ConfectApp
         // вывод истории заказов пользователю
         static public void ViewHistory()
         {
-            var sql = $"SELECT * FROM Orders O JOIN Users U ON O.UserId = U.Id";
+            var sql = $"SELECT * FROM Orders O JOIN Users U ON O.UserId = U.Id WHERE UserId = (SELECT UserId FROM Device WHERE DeviceId = N'{deviceId}') ORDER BY O.Id DESC";
             SqlCommand sqlCommand = new SqlCommand(sql, connection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             Order history = new Order();

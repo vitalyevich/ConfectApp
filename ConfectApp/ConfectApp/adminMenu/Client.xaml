@@ -24,14 +24,14 @@
             <StackLayout BackgroundColor="White">
                 <StackLayout Orientation="Horizontal" BackgroundColor="#77e4ff" HorizontalOptions="FillAndExpand" Padding="0,10,10,10" Margin="0,0,0,0">
                     <Label Margin="10,0,0,0" Text="id" Style="{StaticResource labelStyle}"/>
-                    <Label Margin="9,0,25,0" Text="Имя" Style="{StaticResource labelStyle}"/>
-                    <Label Margin="0,0,20,0" Text="Фамилия" Style="{StaticResource labelStyle}"/>
+                    <Label Margin="9,0,45,0" Text="Имя" Style="{StaticResource labelStyle}"/>
+                    <Label Margin="0,0,40,0" Text="Фамилия" Style="{StaticResource labelStyle}"/>
                     <Label Text="Телефон" Style="{StaticResource labelStyle}"/>
                     <Label Margin="66,0,8,0" Text="Пол" Style="{StaticResource labelStyle}"/>
                     <Label Text="Дата рождения" Style="{StaticResource labelStyle}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Padding="0,-20,0,0" HorizontalOptions="CenterAndExpand" Margin="-55,0,0,0">
+                <StackLayout Orientation="Horizontal" Padding="0,-20,0,0" HorizontalOptions="CenterAndExpand" Margin="-45,0,0,0">
                     <Label Margin="10,0,0,0" x:Name="label2" Style="{StaticResource label2Style}"/>
                     <Label Margin="12,0,0,0" x:Name="label1" Style="{StaticResource label2Style}"/>
                     <Label Margin="10,0,0,0" x:Name="label3" Style="{StaticResource label2Style}"/>

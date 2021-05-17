@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.Company"
+             BackgroundColor="#0000ffff">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="О нас" FontSize="20" AbsoluteLayout.LayoutBounds="0.36,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="#CCCCCC" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+            <ScrollView>
+        <StackLayout Padding="30,0,30,0" Margin="0,-35,0,0" VerticalOptions="Start" HorizontalOptions="Center">
+            <Image Source="icon.png" Aspect="AspectFit" Margin="30,-10,30,-50" HeightRequest="250"/>
+            <Label Text="Время работы доставки" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+
+            <Line Margin="0,8,0,10" X1="220" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" VerticalOptions ="CenterAndExpand" />
+                    <Label x:Name="Label1" Margin="0,5,0,0" Text="Пн: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+            <Label x:Name="Label2" Text="Вт: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="Label3" Text="Ср: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="Label4" Text="Чт: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="Label5" Text="Пт: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="Label6" Text="Сб: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="Label7" Text="Вс: 10:30 - 22:30" Style="{StaticResource labelStyle}"/>
+            <Label Margin="0,20,0,0" Text="Форма оплаты" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+            <Line Margin="0,8,0,10" X1="350" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" VerticalOptions ="CenterAndExpand" />
+
+            <Grid Margin="0,-12,0,0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,0,0,30">
+                <Image Margin="-2,0,0,0" Aspect="AspectFit" HeightRequest="22" Source="balance.png"/>
+                <Image Margin="57,0,0,0" Grid.Column="1" Aspect="AspectFit" HeightRequest="22" Source="pay.png"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="0,45,0,0">
+                <Label Margin="-12,0,0,0" Text="Наличными &#10;курьеру" FontSize="14" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" FontFamily="Ubuntu-Light.ttf#Ubuntu"/>
+                <Label Margin="30,0,0,0" Grid.Column="1" Text="Картой &#10;курьеру" FontSize="14" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" FontFamily="Ubuntu-Light.ttf#Ubuntu"/>
+            </StackLayout>
+            </Grid>
+
+            <Label Margin="0,25,0,-10" Text="Зона доставки" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+            <Frame Padding="0,0,0,0" Margin="0,20,0,0">
+                <Image Source="map.png" Aspect="AspectFill"/>
+            </Frame>
+            <Grid>
+                <Label Margin="0,5,0,20" Text="г. Минск, ул. Леонида-Беды, дом. 4" FontSize="16" HorizontalTextAlignment="Center" TextColor="#8B8B8B" VerticalTextAlignment="Center" FontFamily="Ubuntu-Light.ttf#Ubuntu" BackgroundColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

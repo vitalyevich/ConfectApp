@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.History"
+             BackgroundColor="#F8F8F8">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="История заказов" FontSize="20" AbsoluteLayout.LayoutBounds="0.3,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <RefreshView x:Name="Refresh" RefreshColor="Black" BackgroundColor="White" Refreshing="Refresh_Refreshing">
+            <ScrollView Orientation="Vertical" x:Name="Scroll">
+            <StackLayout BackgroundColor="Transparent" x:Name="stackout">
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+                
+        </StackLayout>
+        </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

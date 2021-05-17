@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="ConfectApp.List.News"
+             BackgroundColor="#F8F8F8">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Сообщения" FontSize="20" AbsoluteLayout.LayoutBounds="0.34,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+</ContentPage>

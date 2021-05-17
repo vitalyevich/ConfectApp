@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.adminMenu.Stats"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Статистика" FontSize="20" AbsoluteLayout.LayoutBounds="0.33,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Resources>
+    <ResourceDictionary>
+        <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#a0a0a0" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+            <Style x:Key="labelStyle1" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu"/>
+            </Style>
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="-20,-5,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Margin="0,0,0,20">
+        <StackLayout>
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Text="Количество заказов:" Style="{StaticResource labelStyle}"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Label x:Name="labelOrders"  Style="{StaticResource labelStyle1}"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="Прибыль:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="labelProfit"  Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+            <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+                <Label Text="Количество клиентов:" Style="{StaticResource labelStyle}"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Label x:Name="labelQuantity"  Style="{StaticResource labelStyle1}"/>
+                </Frame>
+            </StackLayout>
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,10,0,10"/>
+
+        <Label Text="Количество заказов" Style="{StaticResource labelStyle1}" FontSize="18" HorizontalTextAlignment="Center"/>
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,10,0,10"/>
+
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="за день:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="labelDay"  Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="за неделю:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="labelWeek"  Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="за месяц:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+            <Label x:Name="labelMonth" Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="за год:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="labelYear"  Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+       
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,10,0,10"/>
+        <Label Text="Отзывы" Style="{StaticResource labelStyle1}" FontSize="18" HorizontalTextAlignment="Center"/>
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,10,0,10"/>
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="Скорость доставки:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="LabelSpeed"  Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+            <Label Text="Кухня:" Style="{StaticResource labelStyle}"/>
+            <Frame Style="{StaticResource frameStyle}">
+                <Label x:Name="LabelKitchen" Style="{StaticResource labelStyle1}"/>
+            </Frame>
+        </StackLayout>
+            <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
+                <Label Text="Сервис:" Style="{StaticResource labelStyle}"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Label x:Name="LabelService"  Style="{StaticResource labelStyle1}"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"  Margin="0,20,0,5">
+                <Label Text="Оценка:" Style="{StaticResource labelStyle}"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Label x:Name="LabelSum"  Style="{StaticResource labelStyle1}"/>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

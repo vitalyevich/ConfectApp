@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.adminMenu.Push"
+             BackgroundColor="White">
+    
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Пуш-Рассылка" FontSize="20" AbsoluteLayout.LayoutBounds="0.3,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/> 
+
+            <Label Text="Заголовок:" Margin="20,0,20,0" TextColor="Black" FontFamily="Ubuntu-Medium.ttf#Ubuntu" FontSize="16"/>
+            <Frame Padding="0,0,0,0" Margin="20,0,20,0">
+                <Entry TextChanged="Entry1_TextChanged" x:Name="Entry1" FontFamily="Ubuntu-Light.ttf#Ubuntu" Keyboard="Text" MaxLength="32"/>
+            </Frame>
+            <Label Text="Текст:" Margin="20,0,20,0" TextColor="Black" FontFamily="Ubuntu-Medium.ttf#Ubuntu" FontSize="16"/>
+            <Frame Padding="0,0,0,50" Margin="20,0,20,0">
+                <Editor TextChanged="Editor1_TextChanged" x:Name="Editor1" FontFamily="Ubuntu-Light.ttf#Ubuntu" HorizontalOptions="FillAndExpand" AutoSize="TextChanges" Margin="0,-5,0,0" MaxLength="100" IsTabStop="False" Keyboard="Text"/>
+            </Frame>
+            <Button IsEnabled="False" x:Name="Button1" Clicked="Button_Clicked" Text="Отправить" TextTransform="None" Margin="20,20,20,0" BackgroundColor="#b39afd" TextColor="White" FontSize="18" FontFamily="Ubuntu-Bold.ttf#Ubuntu" HorizontalOptions="FillAndExpand"/>
+            <Label Margin="20,0,20,0" Text="Пуш — важнейший инструмент маркетинга. Это прямые сообщения клиентам, которые скачали приложение и разрешили отправлять им такие сообщения."
+                   FontFamily="Ubuntu-Light.ttf#Ubuntu" FontSize="12" HorizontalTextAlignment="Center"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            xmlns:local="clr-namespace:ConfectApp.List"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="black"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.OffscreenPageLimit="2"
+            android:TabbedPage.BarSelectedItemColor="#77cfff"
+            x:Class="ConfectApp.Navigate"  BarBackgroundColor="White"
+            BarTextColor="Black"
+            BackgroundColor="#0000ffff ">
+
+    <TabbedPage.Children>
+        <NavigationPage BarBackgroundColor="White" BarTextColor="Black" Title="Меню" IconImageSource="menu.png">
+            <x:Arguments>
+                <local:MenuApp/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage BarBackgroundColor="White" BarTextColor="Black" Title="Профиль" IconImageSource="person.png">
+                <x:Arguments>
+                    <local:Profile />
+                </x:Arguments>
+            </NavigationPage>
+        <NavigationPage  BarBackgroundColor="White" BarTextColor="Black" Title="Акции" IconImageSource="promotions.png">
+                <x:Arguments>
+                    <local:Promotions/>
+                </x:Arguments>
+            </NavigationPage>
+        <NavigationPage BarBackgroundColor="White" BarTextColor="Black" Title="Корзина" IconImageSource="backet.png">
+                <x:Arguments>
+                    <local:Basket />
+                </x:Arguments>
+            </NavigationPage>
+        </TabbedPage.Children>
+    
+    </TabbedPage>

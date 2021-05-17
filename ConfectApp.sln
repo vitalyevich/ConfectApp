@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectApp.Android", "ConfectApp\ConfectApp.Android\ConfectApp.Android.csproj", "{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectApp", "ConfectApp\ConfectApp\ConfectApp.csproj", "{A4B2471C-B173-4377-90B3-B99506A952B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEFBD216-19F3-4BF8-8101-5C70B3BFB476}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B2471C-B173-4377-90B3-B99506A952B6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DA179C4-5919-4D5D-9307-1DB4B4BCBD82}
+	EndGlobalSection
+EndGlobal

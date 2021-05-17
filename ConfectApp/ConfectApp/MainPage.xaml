@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#E8E8E8" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu"/>
+                <Setter Property="FontSize" Value="14.5"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="143"/>
+                <Setter Property="BackgroundColor" Value="#b39afd"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="50,-50,50,0" HorizontalOptions="FillAndExpand">
+        <Image Source="icon.png" Aspect="AspectFill" Margin="-5,80,0,110" HeightRequest="180" />
+        <Frame x:Name="Frame1" Style="{StaticResource frameStyle}">
+            <Entry Unfocused="Entry1_Unfocused" Focused="Entry1_Focused" TextChanged="Entry1_TextChanged" x:Name="Entry1" Text="+375" Placeholder=" Введите Ваш телефон:" FontSize="Small" Keyboard="Telephone" FontFamily="Ubuntu-Light.ttf#Ubuntu" IsTextPredictionEnabled="True" MaxLength="19"/>
+        </Frame>
+
+        <Frame Padding="10" Margin="12,-52,163,0" BackgroundColor="White" HasShadow="False"/>
+        <Label Margin="13,-27,0,45" Text="Номер телефона" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+        <Frame x:Name="Frame2" Margin="0,5,0,0" Style="{StaticResource frameStyle}">
+            <Entry Unfocused="Entry2_Unfocused" Focused="Entry2_Focused" TextChanged="Entry2_TextChanged" x:Name="Entry2" Placeholder=" Введите Ваш пароль:" FontSize="Small" IsPassword="True" MaxLength="8" FontFamily="Ubuntu-Light.ttf#Ubuntu" ClearButtonVisibility="WhileEditing"/>
+        </Frame>
+
+        <Frame Padding="10" Margin="12,-52,228,0" BackgroundColor="White" HasShadow="False"/>
+        <Label Margin="13,-27,0,45" Text="Пароль" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+        <Button Margin="0,-25,0,0" x:Name="Button3" TextColor="Black" Text="Забыли пароль?" TextTransform="None" FontSize="12" BackgroundColor="transparent" HorizontalOptions="End" CornerRadius="8" FontFamily="Ubuntu-Light.ttf#Ubuntu"/>
+
+        <StackLayout Orientation="Horizontal" Margin="0,-40,0,0">
+            <Button x:Name="Button1" Margin="0,40,0,-15" Text="Авторизация" Clicked="Button1_Clicked" Style="{StaticResource buttonStyle}" IsEnabled="False"/>
+            <Button x:Name="Button2"  Margin="0,40,0,-15" Text="Регистрация" Clicked="Button2_Clicked" Style="{StaticResource buttonStyle}"/>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

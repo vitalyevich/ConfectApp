@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.Errors">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label Text="Ошибка интернет-соединения."/>
+            <Button x:Name="Button1" Clicked="Button1_Clicked" Text="Попробовать ещё раз" HorizontalOptions="Center" BackgroundColor="LightBlue" CornerRadius="8" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

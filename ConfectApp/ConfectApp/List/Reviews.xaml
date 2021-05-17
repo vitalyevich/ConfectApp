@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.Reviews"
+             BackgroundColor="#F8F8F8">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Image WidthRequest="23" HeightRequest="23" Margin="280,0,0,0"
+                   Source="add.png" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Написать отзыв" FontSize="20" AbsoluteLayout.LayoutBounds="0.3,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+</ContentPage>

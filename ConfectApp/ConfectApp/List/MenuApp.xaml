@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.MenuApp"
+             BackgroundColor="#F8F8F8">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="Margin" Value="10,-45,0,0" />
+            </Style>
+            <Style x:Key="label2Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="Margin" Value="280,-45,0,0" />
+            </Style>
+            <Style x:Key="label3Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="Margin" Value="285,0,0,0" />
+            </Style>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="20,-60,245,20" />
+                <Setter Property="BackgroundColor" Value="#32CD32" />
+            </Style> 
+            <Style x:Key="button1Style" TargetType="Button">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="#0000ffff" />
+            </Style>
+            <Style x:Key="label4Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="Margin" Value="10,-5,0,-20" />
+            </Style> 
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="10,0,10,20"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout Spacing="0">
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand"/>
+        <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand" >
+            <StackLayout Spacing="0">
+                <ScrollView Orientation="Horizontal" Padding="0">
+                    <ScrollView.Background>
+                        <RadialGradientBrush Center="0.5,0.5"
+                             Radius="0.5">
+                            <GradientStop Color="#5adbfb"
+                          Offset="0.1"/>
+                            <GradientStop Color="#1da1c2" 
+                          Offset="1.0"/>
+                        </RadialGradientBrush>
+                    </ScrollView.Background>
+                    <FlexLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid Padding="0,0,0,0">
+                            <Image Margin="20,-15,0,0" Source="promm.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="255" ScaleY="1.1">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Margin="20,115,0,0" Text="Лучшая кондитерская в городе" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="14" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+                        </Grid>
+                        <Grid>
+                            <Image Margin="20,-15,20,0" Source="prommka.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="255" ScaleY="1.1">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                           
+                            <Label Margin="0,115,0,0" Text="Большая история" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="14" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+                        </Grid>
+                    </FlexLayout>
+            </ScrollView>
+                <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand"/>
+                <ScrollView Orientation="Horizontal" BackgroundColor="White" Padding="20,0,20,0">
+                    <Grid>
+                        <Button x:Name="Button1" HorizontalOptions="Start" Clicked="Button_Clicked" Text="Торты" Style="{StaticResource button1Style}"/>
+                        <Button x:Name="Button2" HorizontalOptions="Center" Clicked="Button_Clicked_1" Text="Пирожные" Style="{StaticResource button1Style}"/>
+                        <Button x:Name="Button3" HorizontalOptions="End" Clicked="Button_Clicked_2" Text="Десерты" Style="{StaticResource button1Style}"/>
+                    </Grid>
+                </ScrollView>
+                <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelT" Margin="0,10,0,10" Text="Торты" FontSize="20" HorizontalOptions="Center" TextColor="Black" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="snikers.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Сникерс" Style="{StaticResource labelStyle}"/>
+                        <Label Text="70 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="1570 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Арахис, вареное сгущенное молоко,&#10;какао-порошок, бисквит" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button x:Name="Button_Snikers" Clicked="Button_Snikers_Clicked" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="medovik.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Медовик" Style="{StaticResource labelStyle}"/>
+                        <Label Text="95 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="1805 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Коржи, сметанный классический&#10;крем" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_4" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="grafskii.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Графские развалины" Style="{StaticResource labelStyle}"/>
+                        <Label Text="15 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="882 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Сгущенное молоко, грецкие орехи,&#10;темный шоколад, сахарная пудра" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_3" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Padding="0,0,0,0" Margin="10,0,10,20" CornerRadius="5">
+                    <Grid Padding="0,0,0,0">
+                        <Image Grid.Row="0" Source="kiev.png" Aspect="AspectFit" Margin="0,0,0,-125"/>
+                        <Label Margin="10,50,0,0" Text="Киев" Style="{StaticResource labelStyle}"/>
+                        <Label Margin="280,50,0,0" Text="70 р." Style="{StaticResource label2Style}"/>
+                        <Label Margin="285,95,0,0" Text="1322 гр" Style="{StaticResource label3Style}"/>
+                        <Label Margin="10,53,0,-55" Text="Сливочный крем, коржи,&#10;грецкие орехи" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_5" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="barxat.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Красный бархат" Style="{StaticResource labelStyle}"/>
+                        <Label Text="27 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="2860 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Бисквит, какао-порошок,&#10;крем-чиз" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_6" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="muraveinik.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Муравейник" Style="{StaticResource labelStyle}"/>
+                        <Label Text="30 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="1610 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Вареное сгущенное молоко,&#10;сливочный крем" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_7" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="napoleon.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Наполеон" Style="{StaticResource labelStyle}"/>
+                        <Label Text="51 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="2168 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Заварной крем со сгущенкой,&#10;слоеное тесто" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_8" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Label x:Name="labelP" Margin="0,0,0,10" Text="Пирожные" FontSize="20" HorizontalOptions="Center" TextColor="Black" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="pirozhnoe_pavlova.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Пирожное «Павлова»" Style="{StaticResource labelStyle}"/>
+                        <Label Text="28 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="6 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="Нежнейшее суфле, ягодное&#10;кули, крем-чиз" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_9" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Padding="0,0,0,0" Margin="10,0,10,20" CornerRadius="5">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="kartoshka.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Пирожное «Картошка»" Style="{StaticResource labelStyle}"/>
+                        <Label Text="2 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="3 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="Какао-порошок, сгущеное&#10;молоко" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_10" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="iskimo.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Пирожное «Эскимо»" Style="{StaticResource labelStyle}"/>
+                        <Label Text="15 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="3 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="На основе пирожное&#10;картошка, белый шоколад" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_11" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Label x:Name="labelD" Margin="0,0,0,10" Text="Десерты" FontSize="20" HorizontalOptions="Center" TextColor="Black" FontFamily="Ubuntu-Medium.ttf#Ubuntu"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="keksi.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Кексы с кремом" Style="{StaticResource labelStyle}"/>
+                        <Label Text="7 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="3 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="Белково-заварноый крем,&#10;бисквит" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_12" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="sinabony.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Булочка «Синнабон»" Style="{StaticResource labelStyle}"/>
+                        <Label Text="16 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="4 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="Мягкое тесто, ароматная корица &#10;и нежный сливочный крем" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_13" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="merengovii_rulet.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Меренговый рулет" Style="{StaticResource labelStyle}"/>
+                        <Label Text="50 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="1150 гр" Style="{StaticResource label3Style}"/>
+                        <Label Text="Корж, свежая малина &#10;и сахарная пудра" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_14" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Grid Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Grid.Row="0" Source="beze.png" Aspect="AspectFit" Margin="0,0,0,-50"/>
+                        <Label Text="Безе" Style="{StaticResource labelStyle}"/>
+                        <Label Text="3 р." Style="{StaticResource label2Style}"/>
+                        <Label Text="12 шт" Style="{StaticResource label3Style}"/>
+                        <Label Text="Сахарная пудра, лимонный&#10;сок, яичные белки" Style="{StaticResource label4Style}"/>
+                    </Grid>
+                </Frame>
+                <Button Clicked="Button_Clicked_15" Text="В корзину" Style="{StaticResource buttonStyle}"/>
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Меню" FontSize="20" AbsoluteLayout.LayoutBounds="0.36,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+</ContentPage>

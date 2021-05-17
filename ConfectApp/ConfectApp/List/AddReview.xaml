@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.AddReview"
+             xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Новый отзыв" FontSize="20" AbsoluteLayout.LayoutBounds="0.35,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ratingStyle" TargetType="messier16:RatingBar">
+                <Setter Property="Rating" Value="{Binding Rating, Mode=TwoWay}" />
+                <Setter Property="FillColor" Value="#ffff00" />
+                <Setter Property="FilledImage" Value="star_filled.png" />
+                <Setter Property="Image" Value="star.png" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="60,5,60,10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Margin="75,25,75,0" Spacing="0">
+
+                <Label FontFamily="Ubuntu-Regular.ttf#Ubuntu" FontSize="15" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Скорость доставки " TextColor="Black" />
+                            <Span Text="*" TextColor="#ff033e"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+                <messier16:RatingBar PropertyChanged="Rating1_PropertyChanged" Rating="1" x:Name="Rating1" MaxRating="5" Style="{StaticResource ratingStyle}"/>
+           
+                <Label FontFamily="Ubuntu-Regular.ttf#Ubuntu" FontSize="15" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Кухня " TextColor="Black" />
+                            <Span Text="*" TextColor="#ff033e"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <messier16:RatingBar Rating="1" PropertyChanged="Rating2_PropertyChanged" x:Name="Rating2" MaxRating="5" Style="{StaticResource ratingStyle}"/>
+             
+                <Label FontFamily="Ubuntu-Regular.ttf#Ubuntu" FontSize="14" Margin="-5,0,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Сервис (общение, курьер, доставка) " TextColor="Black" />
+                            <Span Text="*" TextColor="#ff033e"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <messier16:RatingBar Rating="1" PropertyChanged="Rating3_PropertyChanged" x:Name="Rating3" MaxRating="5" Style="{StaticResource ratingStyle}"/>
+
+            </StackLayout>
+            <Label Text="*" TextColor="#ff033e" Margin="25,20,0,-30"/>
+            <Frame Padding="0,0,0,70" Margin="40,0,40,0" HasShadow="False" BorderColor="#DCDCDC">
+                <Editor TextChanged="Editor1_TextChanged" Placeholder="Текст отзыва" FontSize="15" x:Name="Editor1" FontFamily="Ubuntu-Light.ttf#Ubuntu" HorizontalOptions="FillAndExpand" AutoSize="TextChanges" Margin="0,-5,0,0" MaxLength="100" IsTabStop="False" Keyboard="Text"/>
+            </Frame>
+            <Button x:Name="Button1" IsEnabled="False" Clicked="Button_Clicked" Text="Опубликовать" Padding="0" Margin="40,10,40,0" HeightRequest="42" TextTransform="None" FontFamily="Ubuntu-Bold.ttf#Ubuntu" FontSize="16" TextColor="White" BackgroundColor="#b39afd"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

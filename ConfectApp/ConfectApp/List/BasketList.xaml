@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.BasketList"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Корзина" FontSize="20" AbsoluteLayout.LayoutBounds="0.35,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    
+</ContentPage>

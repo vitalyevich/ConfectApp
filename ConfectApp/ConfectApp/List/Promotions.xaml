@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.Promotions"
+             BackgroundColor="#F8F8F8">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Акции" FontSize="20" AbsoluteLayout.LayoutBounds="0.36,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+            <StackLayout Padding="15,0,15,0" HorizontalOptions="Center">
+                <Frame Padding="0,0,0,0" CornerRadius="8" HasShadow="False">
+                <Grid>
+                    <Image Source="prom.png" Aspect="AspectFit" Grid.Row="0" Margin="0,0,0,-50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                        <Label Text="Лучшая кондитерская в городе" Grid.Row="1" Margin="0,40,0,0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="16" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+                </Grid>
+            </Frame>
+                <Frame Padding="0,0,0,0" Margin="0,10,0,0" CornerRadius="8" HasShadow="False">
+                <Grid>
+                    <Image Source="promka.png" Aspect="AspectFit" Grid.Row="0" Margin="0,0,0,-50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Большая история" Grid.Row="1" Margin="0,40,0,0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="16" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

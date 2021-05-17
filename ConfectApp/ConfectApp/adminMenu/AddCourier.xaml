@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.adminMenu.AddCourier"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Добавить" FontSize="20" AbsoluteLayout.LayoutBounds="0.35,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+        <StackLayout>
+        <Line  X1="500" Stroke="#E8E8E8" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+        <RelativeLayout Margin="50,20,50,0" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="Check" Color="#E8E8E8" CheckedChanged="CheckBox_CheckedChanged"/>
+                    <Label Margin="0,7,0,0" Text="Удалить" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+                </StackLayout>
+                <Frame x:Name="Frame1" RelativeLayout.YConstraint="50" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HasShadow="False" BorderColor="#E8E8E8">
+                    <Entry MaxLength="9" TextChanged="Entry1_TextChanged" Unfocused="Entry1_Unfocused" Focused="Entry1_Focused" x:Name="Entry1" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" Keyboard="Text"/>
+                </Frame>
+                <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="14" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="40"/>
+                <Label RelativeLayout.YConstraint="40" RelativeLayout.XConstraint="20"  Text="Имя" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+                <Frame x:Name="Frame2" RelativeLayout.YConstraint="110" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HasShadow="False" BorderColor="#E8E8E8">
+                <Entry MaxLength="19" Keyboard="Telephone" Unfocused="Entry2_Unfocused" TextChanged="Entry2_TextChanged" Text="+375" Focused="Entry2_Focused" x:Name="Entry2" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" />
+                </Frame>
+                <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="48" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="100"/>
+                <Label RelativeLayout.YConstraint="100" RelativeLayout.XConstraint="20"  Text="Телефон" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+                <Frame x:Name="Frame3" RelativeLayout.YConstraint="170" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HeightRequest="39" HasShadow="False" BorderColor="#E8E8E8">
+
+                <Picker Title="Указать новую" TitleColor="LightGray" x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged" TextColor="Black" FontFamily="Ubuntu-Light.ttf#Ubuntu" FontSize="Small">
+                    <Picker.Items>
+                        <x:String>Центральный район</x:String>
+                        <x:String>Советский район</x:String>
+                        <x:String>Первомайский район</x:String>
+                        <x:String>Партизанский район</x:String>
+                        <x:String>Заводской район</x:String>
+                        <x:String>Ленинский район</x:String>
+                        <x:String>Октябрьский район</x:String>
+                        <x:String>Московский район</x:String>
+                        <x:String>Фрунзенский район</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+                <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="90" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="160"/>
+            <Label RelativeLayout.YConstraint="160" RelativeLayout.XConstraint="20"  Text="Зоны доставки" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+            <Button IsEnabled="False" Clicked="Button1_Clicked" x:Name="Button1" Text="Сохранить" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280"  RelativeLayout.YConstraint="250" 
+                    FontSize="16" CornerRadius="8" HeightRequest="40" WidthRequest ="140" TextTransform="None" TextColor="White" BackgroundColor="#b39afd" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+            </RelativeLayout>
+        </StackLayout>
+  
+</ContentPage>

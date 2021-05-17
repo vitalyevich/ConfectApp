@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.List.EditProfile"
+             BackgroundColor="White">
+
+    <RelativeLayout Margin="50,20,50,0" HorizontalOptions="FillAndExpand">
+        <RadioButton x:Name="RadioButton1" FontSize="16" Content="Мужчина" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+        <RadioButton RelativeLayout.XConstraint="110" x:Name="RadioButton2"  FontSize="16" Content="Женщина" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+        <Frame x:Name="Frame1" RelativeLayout.YConstraint="50" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HasShadow="False" BorderColor="#E8E8E8">
+            <Entry Focused="Entry1_Focused" Unfocused="Entry1_Unfocused" x:Name="Entry1" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" Keyboard="Text"/>
+        </Frame>
+        <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="14" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="40"/>
+        <Label RelativeLayout.YConstraint="40" RelativeLayout.XConstraint="20"  Text="Имя" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+        <Frame x:Name="Frame2" RelativeLayout.YConstraint="110" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HasShadow="False" BorderColor="#E8E8E8">
+            <Entry Focused="Entry2_Focused" Unfocused="Entry2_Unfocused" x:Name="Entry2" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" Keyboard="Text"/>
+        </Frame>
+        <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="48" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="100"/>
+        <Label RelativeLayout.YConstraint="100" RelativeLayout.XConstraint="20"  Text="Фамилия" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+        <Frame RelativeLayout.YConstraint="170" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HeightRequest="39" HasShadow="False" BorderColor="#E8E8E8">
+            <Entry x:Name="Entry3" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" Keyboard="Text" IsEnabled="False"/>
+        </Frame>
+        <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="90" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="160"/>
+
+        <Label RelativeLayout.YConstraint="160" RelativeLayout.XConstraint="20"  Text="Дата Рождения" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+        <Label RelativeLayout.YConstraint="220" RelativeLayout.XConstraint="10" Text="Укажите ваш день рождения, чтобы мы могли&#10;прислать вам поздравительные баллы." TextColor="#8B8B8B" FontFamily="Ubuntu-Light.ttf#Ubuntu" FontSize="12" />
+        <Button x:Name="Button1" Clicked="Button1_Clicked" Text="Сохранить" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280"  RelativeLayout.YConstraint="270" 
+                    FontSize="16" CornerRadius="8" HeightRequest="40" WidthRequest ="140" TextTransform="None" TextColor="White" BackgroundColor="#b39afd" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        <Button TextTransform="None" Clicked="Button_Clicked" BackgroundColor="#0000ffff" Text="Выход" TextColor="#8B8B8B" FontFamily="Ubuntu-Light.ttf#Ubuntu" RelativeLayout.YConstraint="315" Margin="100,-10,0,0" FontSize="12" Padding="0,0,0,0"/>
+    </RelativeLayout>
+
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.AdminMenu"
+                  BackgroundColor="White">
+
+    <MasterDetailPage.Master>
+      <ContentPage Title="Профиль" BackgroundColor="Black">
+            <ContentPage.Content>
+    <StackLayout Padding="30,50,0,0">
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="person.png"/>
+        <Button Clicked="Button_Clicked" Margin="-10,0,0,0" BackgroundColor="Black" TextColor="White" Text="Профиль" TextTransform="None" FontSize="18" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="account.png"/>
+        <Button Clicked="Button_Clicked_1" Margin="-10,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Клиенты" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="backet.png"/>
+        <Button Clicked="Button_Clicked_2" Margin="-10,0,0,0" BackgroundColor="Black" TextColor="White" Text="Заказы" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="reviews.png"/>
+        <Button Clicked="Button_Clicked_4" Margin="-10,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Отзывы" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="stats.png"/>
+        <Button Clicked="Button_Clicked_5" Margin="-9,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Статистика" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="news.png"/>
+        <Button Clicked="Button_Clicked_7" Margin="-9,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Пуш-рассылка" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>    
+        <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="admins.png"/>
+        <Button Clicked="Button_Clicked_6" Margin="-12,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Баллы" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="0,0,0,-5">
+                <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="account.png"/>
+        <Button Clicked="Button_Clicked_3" Margin="-12,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Курьеры" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+
+    <Line Margin="-30,35,0,25" X1="240" Stroke="#8B8B8B" HorizontalOptions="Center" VerticalOptions ="Center"/>
+
+    <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+        <Image WidthRequest="45" HeightRequest="45" Aspect="AspectFit" Source="instagram.png"/>
+        <Button Clicked="Button_Clicked_8" Margin="-9,0,0,0"  BackgroundColor="Black" TextColor="White" Text="Мы в Instagram" TextTransform="None" FontSize="19" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    </StackLayout>
+
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,20,0,0">
+        <Button Margin="30,10,70,0"  BackgroundColor="Black" TextColor="White" Text="Публичный договор &#10;оферты" TextTransform="None" FontSize="13" FontFamily="Ubuntu-Light.ttf#Ubuntu"/>
+    </StackLayout>
+
+    <Label Padding="0,20,0,0" Margin="30,10,70,0" BackgroundColor="Black" TextColor="White" Text="Приложение создано &#10;при поддержке" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextTransform="None" FontSize="14" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
+    <Label Margin="74,-20,0,0" Text="@vitalyevich" HorizontalTextAlignment="Center" TextColor="#fe804e" FontSize="12" FontFamily="Ubuntu-LightItalic.ttf#Ubuntu"/>
+
+    <Image Margin="-10,-26,0,0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="30" HeightRequest="30" Aspect="AspectFit" Source="v.png"/>
+
+    </StackLayout>
+    </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <Label Text="DetailPage" HorizontalOptions="Center" VerticalOptions ="Center"/>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

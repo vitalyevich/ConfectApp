@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConfectApp.adminMenu.Courier">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Bold.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="label2Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <RefreshView x:Name="Refresh" RefreshColor="Black" BackgroundColor="White" Refreshing="RefreshView_Refreshing">
+        <ScrollView Orientation="Horizontal">
+        <StackLayout BackgroundColor="White">
+            <StackLayout Orientation="Horizontal" BackgroundColor="#77e4ff" HorizontalOptions="FillAndExpand" Padding="0,10,10,10" Margin="0,0,0,0">
+                <Label Margin="10,0,35,0" Text="Имя" Style="{StaticResource labelStyle}"/>
+                <Label Text="Телефон" Style="{StaticResource labelStyle}"/>
+                <Label Margin="78,0,0,0" Text="Зона доставки" Style="{StaticResource labelStyle}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,0" Margin="0,-20,0,0">
+                <Label Margin="10,0,0,0" x:Name="label1" Style="{StaticResource label2Style}"/>
+                <Label Margin="15,0,0,0" x:Name="label2" Style="{StaticResource label2Style}"/>
+                <Label Margin="16,0,0,0" x:Name="label3" Style="{StaticResource label2Style}"/>
+                </StackLayout>
+
+
+            <Button  VerticalOptions ="EndAndExpand" HorizontalOptions = "FillAndExpand" Clicked="Button_Clicked" FontSize = "16" FontFamily = "Ubuntu-Bold.ttf#Ubuntu" Text = "Добавить курьера"
+                     TextTransform = "None" TextColor = "White" BackgroundColor = "#b39afd" HeightRequest = "60"/>
+        
+        </StackLayout>
+    </ScrollView>
+    </RefreshView>
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout>
+            <Label Text="Курьеры" FontSize="20" AbsoluteLayout.LayoutBounds="0.35,0.3" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="Black" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+</ContentPage>

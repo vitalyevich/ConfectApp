@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="ConfectApp.Register"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#E8E8E8" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="RelativeLayout.XConstraint" Value="5" />
+                <Setter Property="RelativeLayout.WidthConstraint" Value="280" />
+            </Style>
+            <Style x:Key="frame2Style" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="RelativeLayout.XConstraint" Value="18" />
+                <Setter Property="HeightRequest" Value="-20" />
+            </Style>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Ubuntu-Regular.ttf#Ubuntu"/>
+                <Setter Property="RelativeLayout.XConstraint" Value="20"/>
+            </Style>
+            <Style x:Key="radioStyle" TargetType="RadioButton">
+                <Setter Property="FontFamily" Value="Ubuntu-Regular.ttf#Ubuntu"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="Ubuntu-Light.ttf#Ubuntu"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <RelativeLayout Margin="50,30,50,0" HorizontalOptions="FillAndExpand">
+            <RadioButton CheckedChanged="RadioButton1_CheckedChanged" x:Name="RadioButton1" Content="Мужчина" Style="{StaticResource radioStyle}"/>
+            <RadioButton CheckedChanged="RadioButton2_CheckedChanged" RelativeLayout.XConstraint="110" x:Name="RadioButton2" Content="Женщина" Style="{StaticResource radioStyle}"/>
+
+            <Frame x:Name="Frame1" RelativeLayout.YConstraint="50" Style="{StaticResource frameStyle}">
+                <Entry Focused="Entry1_Focused" Unfocused="Entry1_Unfocused" TextChanged="Entry1_TextChanged" Text="+375" x:Name="Entry1" Keyboard="Telephone" MaxLength="19" IsTextPredictionEnabled="True" Style="{StaticResource entryStyle}"/>
+            </Frame>
+            <Frame WidthRequest="79" RelativeLayout.YConstraint="36" Style="{StaticResource frame2Style}"/>
+            <Label RelativeLayout.YConstraint="40" Text="Номер телефона" Style="{StaticResource labelStyle}"/>
+
+            <Frame x:Name="Frame2" RelativeLayout.YConstraint="120" Style="{StaticResource frameStyle}">
+                <Entry Focused="Entry2_Focused" Unfocused="Entry2_Unfocused" TextChanged="Entry2_TextChanged" x:Name="Entry2" IsPassword="True" Style="{StaticResource entryStyle}" ClearButtonVisibility="WhileEditing"/>
+            </Frame>
+            <Frame WidthRequest="13" RelativeLayout.YConstraint="110" Style="{StaticResource frame2Style}"/>
+            <Label RelativeLayout.YConstraint="110" Text="Пароль" Style="{StaticResource labelStyle}"/>
+
+            <Frame x:Name="Frame3" RelativeLayout.YConstraint="190" Style="{StaticResource frameStyle}">
+                <Entry Focused="Entry3_Focused" Unfocused="Entry3_Unfocused" TextChanged="Entry3_TextChanged" x:Name="Entry3" Style="{StaticResource entryStyle}" Keyboard="Text"/>
+            </Frame>
+            <Frame WidthRequest="-7" RelativeLayout.YConstraint="180" Style="{StaticResource frame2Style}"/>
+            <Label RelativeLayout.YConstraint="180" Text="Имя" Style="{StaticResource labelStyle}"/>
+
+            <Frame x:Name="Frame4" RelativeLayout.YConstraint="260" Style="{StaticResource frameStyle}">
+                <Entry Focused="Entry4_Focused" Unfocused="Entry4_Unfocused" TextChanged="Entry4_TextChanged" x:Name="Entry4" Style="{StaticResource entryStyle}" Keyboard="Text"/>
+            </Frame>
+            <Frame WidthRequest="27" RelativeLayout.YConstraint="250" Style="{StaticResource frame2Style}"/>
+            <Label RelativeLayout.YConstraint="250" Text="Фамилия" Style="{StaticResource labelStyle}"/>
+
+            <Frame x:Name="Frame5" RelativeLayout.YConstraint="330" HeightRequest="39" Style="{StaticResource frameStyle}">
+                <DatePicker Focused="date_Focused" Unfocused="date_Unfocused" Visual="Material" x:Name="date" Format="D" Date="{Binding SelectedDate}" DateSelected="DatePicker_DateSelected"  FontFamily="Ubuntu-Light.ttf#Ubuntu" FontSize="Small" TextColor="Black" MinimumDate="1/01/1970" MaximumDate="{x:Static sys:DateTime.Now}"/> 
+            </Frame>
+            <Frame WidthRequest="68" RelativeLayout.YConstraint="320" Style="{StaticResource frame2Style}"/>
+
+            <Label RelativeLayout.YConstraint="320" Text="Дата Рождения" Style="{StaticResource labelStyle}"/>
+
+            <Button IsEnabled="False" x:Name="Button1" Clicked="Button1_Clicked" Text="Регистрация" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280"  RelativeLayout.YConstraint="400" 
+                    FontSize="16" CornerRadius="8" HeightRequest="40" WidthRequest ="140" TextTransform="None" TextColor="White" BackgroundColor="#b39afd" FontFamily="Ubuntu-Bold.ttf#Ubuntu"/>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

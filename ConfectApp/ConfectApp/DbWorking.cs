@@ -140,10 +140,10 @@ namespace ConfectApp
             SqlCommand sqlCommand = new SqlCommand(sql, connection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             User view = new User();
-
+            int i = 0;
             while (reader.Read())
             {
-                view.Id = view.Id + "\n" + reader.GetInt32(reader.GetOrdinal("Id")).ToString();
+                view.Id = $"{view.Id}\n{++i}";
                 view.firstName = view.firstName + "\n" + reader.GetString(reader.GetOrdinal("FirstName"));
                 view.lastName = view.lastName + "\n" + reader.GetString(reader.GetOrdinal("LastName"));
                 view.phone = view.phone + "\n" + reader.GetString(reader.GetOrdinal("Phone"));

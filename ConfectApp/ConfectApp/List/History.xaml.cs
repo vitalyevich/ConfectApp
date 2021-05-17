@@ -1,10 +1,6 @@
 ﻿using ConfectApp.Menu;
-using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -40,8 +36,8 @@ namespace ConfectApp.List
         {
             Frame frame = new Frame
             {
-                Padding = new Thickness(0,0,0,5),
-                Margin = new Thickness(20,0,20,10), 
+                Padding = new Thickness(0, 0, 0, 5),
+                Margin = new Thickness(20, 0, 20, 10),
                 CornerRadius = 8,
                 HasShadow = false
             };
@@ -50,15 +46,15 @@ namespace ConfectApp.List
                 Margin = new Thickness(20)
             };
 
-            frame.Content = stack; 
+            frame.Content = stack;
 
             Button button = new Button
             {
                 Margin = new Thickness(130, -2, 0, 0),
-                Text = history.status, 
+                Text = history.status,
                 TextTransform = TextTransform.Lowercase,
                 TextColor = Color.White,
-                BackgroundColor = Color.LightGreen, 
+                BackgroundColor = Color.LightGreen,
                 FontSize = 14,
                 FontFamily = "Ubuntu-Light.ttf#Ubuntu",
                 Padding = new Thickness(0),
@@ -73,11 +69,11 @@ namespace ConfectApp.List
                 button.Margin = new Thickness(100, -2, 0, 0);
                 button.BackgroundColor = Color.Orange;
             }
-            else if(history.status == "Отмена")
+            else if (history.status == "Отмена")
             {
                 button.BackgroundColor = Color.Red;
             }
-            else if(history.status == "Доставлен")
+            else if (history.status == "Доставлен")
             {
                 button.WidthRequest = 90;
                 button.Margin = new Thickness(100, -2, 0, 0);
@@ -100,13 +96,13 @@ namespace ConfectApp.List
             };
             stack.Children.Add(stackLayout);
 
-            if(history.nomination == "Самовывоз")
+            if (history.nomination == "Самовывоз")
             {
                 Label label = new Label
                 {
                     Text = "Самовывоз:",
-                    TextColor = Color.Black, 
-                    FontSize = 16, 
+                    TextColor = Color.Black,
+                    FontSize = 16,
                     FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
                 };
                 stack.Children.Add(label);
@@ -125,10 +121,10 @@ namespace ConfectApp.List
 
             stack.Children.Add(new Label
             {
-                Margin = new Thickness(0,-5,0,0) ,
-                Text = history.GPS, 
+                Margin = new Thickness(0, -5, 0, 0),
+                Text = history.GPS,
                 TextColor = Color.Black,
-                FontSize = 16 ,
+                FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
             });
 
@@ -143,7 +139,7 @@ namespace ConfectApp.List
             stack.Children.Add(new Label
             {
                 Margin = new Thickness(0, -5, 0, 0),
-                Text = "Комментарий:", 
+                Text = "Комментарий:",
                 TextColor = Color.Black,
                 FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
@@ -151,7 +147,7 @@ namespace ConfectApp.List
 
             stack.Children.Add(new Label
             {
-                Margin = new Thickness(0, -5, 0, 0), 
+                Margin = new Thickness(0, -5, 0, 0),
                 Text = history.comment,
                 TextColor = Color.Black,
                 FontSize = 16,
@@ -168,7 +164,7 @@ namespace ConfectApp.List
             stack.Children.Add(new Label
             {
                 Margin = new Thickness(0, -5, 0, 0),
-                Text=$"Заберу заказ через {history.time}", 
+                Text = $"Заберу заказ через {history.time}",
                 TextColor = Color.Black,
                 FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
@@ -181,7 +177,7 @@ namespace ConfectApp.List
                 FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
             });
-            stack.Children.Add(new Label 
+            stack.Children.Add(new Label
             {
                 Margin = new Thickness(0, -5, 0, 0),
                 Text = history.products,
@@ -198,21 +194,21 @@ namespace ConfectApp.List
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
             });
 
-            stack.Children.Add(new Label 
+            stack.Children.Add(new Label
             {
                 Text = $"Форма оплаты: {history.payment}",
                 TextColor = Color.Black,
                 FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
             });
-            stack.Children.Add(new Label 
+            stack.Children.Add(new Label
             {
                 Text = $"Стоимость блюд: {history.total} р.",
                 TextColor = Color.Black,
                 FontSize = 16,
                 FontFamily = "Ubuntu-Regular.ttf#Ubuntu"
             });
-            stack.Children.Add(new Label 
+            stack.Children.Add(new Label
             {
                 Text = $"Итого: {history.total} р.",
                 TextColor = Color.Black,
@@ -221,7 +217,7 @@ namespace ConfectApp.List
             });
 
             listFrame.Add(frame);
-         }
+        }
 
         private void Refresh_Refreshing(object sender, EventArgs e)
         {

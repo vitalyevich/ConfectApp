@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ConfectApp.adminMenu
@@ -25,8 +19,8 @@ namespace ConfectApp.adminMenu
             labelQuantity.Text = quantity.ToString();
             int orders = DbWorking.StatsOrders();
             labelOrders.Text = orders.ToString() + " заказ.";
-            int profit = DbWorking.StatsProfit(); 
-            labelProfit.Text = profit.ToString() + " р."; 
+            int profit = DbWorking.StatsProfit();
+            labelProfit.Text = profit.ToString() + " р.";
 
             labelDay.Text = DbWorking.StatsNumberOfOrders(0).ToString();
             labelWeek.Text = DbWorking.StatsNumberOfOrders(1).ToString();

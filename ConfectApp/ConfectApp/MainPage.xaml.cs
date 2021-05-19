@@ -66,7 +66,6 @@ namespace ConfectApp
             }
 
         }
-
         async private void Button2_Clicked(object sender, EventArgs e)
         {
             Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
@@ -90,22 +89,18 @@ namespace ConfectApp
                 return Entry1.Text;
             }
         }
-
         private void Entry1_Focused(object sender, FocusEventArgs e)
         {
             Frame1.BorderColor = Color.LightSkyBlue;
         }
-
         private void Entry2_Focused(object sender, FocusEventArgs e)
         {
             Frame2.BorderColor = Color.LightSkyBlue;
         }
-
         private void Entry2_Unfocused(object sender, FocusEventArgs e)
         {
             Frame2.BorderColor = Color.FromHex("#E8E8E8");
         }
-
         private void Entry1_Unfocused(object sender, FocusEventArgs e)
         {
             Frame1.BorderColor = Color.FromHex("#E8E8E8");

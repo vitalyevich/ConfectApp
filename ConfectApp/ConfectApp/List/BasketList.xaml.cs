@@ -1,9 +1,6 @@
 ﻿using ConfectApp.Menu;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
@@ -22,14 +19,14 @@ namespace ConfectApp.List
             entry5.Text = us.lastName;
             entry2.Text = us.phone;
         }
-   
+
         public static List<String> prod = new List<String>();
         public static void listPoducts(Product p)
-        { 
+        {
             prod.Add($"{p.productName}, {p.productAmount}\n    {p.productPrice} р. x {p.basketAmount} шт.\n");
         }
         public Order userPay = new Order();
-        private void Button_Clicked(object sender, EventArgs e)   // разобраться чтобы не заходило по сто раз
+        private void Button_Clicked(object sender, EventArgs e)
         {
             Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
             prod.Clear();
@@ -40,17 +37,17 @@ namespace ConfectApp.List
             int i = 0;
             foreach (String txt in prod)
             {
-                checkList = checkList +"\n"+ $"{++i}. " + txt;
+                checkList = checkList + "\n" + $"{++i}. " + txt;
             }
 
-                userPay.total = ProductBasket.prCheck;
-                userPay.firstName = entry5.Text;
-                userPay.phone = entry2.Text;
-                userPay.products = checkList;
-                userPay.point = 2; 
+            userPay.total = ProductBasket.prCheck;
+            userPay.firstName = entry5.Text;
+            userPay.phone = entry2.Text;
+            userPay.products = checkList;
+            userPay.point = 2;
 
             DisplayActionSheet("Кондитер", "Ок", null, "Ожидайте, пока ваш заказ примет наш оператор.");
-            DbWorking.OrdersAdd(userPay); 
+            DbWorking.OrdersAdd(userPay);
 
             Application.Current.MainPage = new UserMenu(0);
         }
@@ -122,7 +119,7 @@ namespace ConfectApp.List
 
             button2.Clicked += Button2_Clicked;
 
-            if(check == 2)
+            if (check == 2)
             {
                 button1.BackgroundColor = Color.FromHex("#b39afd");
                 button1.TextColor = Color.White;
@@ -197,7 +194,7 @@ namespace ConfectApp.List
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.Center,
                 Spacing = 35,
-                Margin = new Thickness(-10,0,0,15),
+                Margin = new Thickness(-10, 0, 0, 15),
                 Children =
                 {
                     radioButton,
@@ -229,7 +226,7 @@ namespace ConfectApp.List
 
             picker.SelectedIndexChanged += (object sender, EventArgs e) =>// НЕ РАБОТАЕТ!
             {
-               userPay.time = picker.Items[picker.SelectedIndex];
+                userPay.time = picker.Items[picker.SelectedIndex];
             };
 
 
@@ -253,7 +250,7 @@ namespace ConfectApp.List
                 HasShadow = false,
                 Margin = new Thickness(0)
             };
-            
+
             Editor editor = new Editor
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -324,7 +321,7 @@ namespace ConfectApp.List
 
             frame7.Content = button;
 
-            StackLayout stack = new StackLayout 
+            StackLayout stack = new StackLayout
             {
                 Margin = new Thickness(30, 10, 30, 0),
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -332,7 +329,7 @@ namespace ConfectApp.List
 
             stack.Children.Add(frame);
 
-            
+
             if (check == 2)
             {
                 Frame frame2 = new Frame
@@ -377,7 +374,7 @@ namespace ConfectApp.List
                     Text = "Адрес доставки",
                     TextColor = Color.Black,
                     FontFamily = "Ubuntu-Regular.ttf#Ubuntu",
-                    Margin = new Thickness(13,-24,0,30)
+                    Margin = new Thickness(13, -24, 0, 30)
                 });
                 entry.TextChanged += Entry_TextChanged;
                 userPay.nomination = "Доставка по адресу";

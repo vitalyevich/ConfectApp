@@ -1,12 +1,4 @@
-﻿using ConfectApp.adminMenu;
-using ConfectApp.List;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ConfectApp
@@ -20,7 +12,6 @@ namespace ConfectApp
             InitializeComponent();
             if (check == 1)
             {
-                //Application.Current обновление страниц сделать!
                 CurrentPage = Children[0];
             }
             else if (check == 2)
@@ -31,7 +22,7 @@ namespace ConfectApp
             {
                 CurrentPage = Children[3];
             }
-            else 
+            else
             {
                 CurrentPage = Children[2];
             }

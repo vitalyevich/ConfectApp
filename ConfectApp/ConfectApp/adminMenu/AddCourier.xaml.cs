@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -47,7 +42,7 @@ namespace ConfectApp.adminMenu
         }
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (Check.IsChecked) 
+            if (Check.IsChecked)
             {
                 Entry1.IsEnabled = false;
                 picker.IsEnabled = false;
@@ -96,7 +91,7 @@ namespace ConfectApp.adminMenu
             Frame3.BorderColor = Color.FromHex("#E8E8E8");
         }
 
-        private string text; 
+        private string text;
         public string checkLogin
         {
             get

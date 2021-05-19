@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Reflection.Emit;
+﻿using ConfectApp.Menu;
 using Xamarin.Forms;
-using Xamarin.Essentials;
-using ConfectApp;
-using ConfectApp.Menu;
 
 namespace ConfectApp
 {
@@ -50,7 +43,7 @@ namespace ConfectApp
             int check = DbWorking.CheckIO();
             if (check == 1)
             {
-                int isMenu = DbWorking.isCheckMenu(); 
+                int isMenu = DbWorking.isCheckMenu();
                 if (isMenu == 0)
                 {
                     Application.Current.MainPage = new UserMenu(0);

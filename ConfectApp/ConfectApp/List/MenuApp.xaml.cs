@@ -1,14 +1,9 @@
-﻿using ConfectApp.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ConfectApp.List 
+namespace ConfectApp.List
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuApp : ContentPage
@@ -17,7 +12,6 @@ namespace ConfectApp.List
         {
             InitializeComponent();
         }
-
         async private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
@@ -32,19 +26,19 @@ namespace ConfectApp.List
             await Clipboard.SetTextAsync("Start");
 
         }
-   
+
         public Color button
         {
             get
             {
-                if(Button1.TextColor == Color.FromHex("#5adbfb") || 
+                if (Button1.TextColor == Color.FromHex("#5adbfb") ||
                     Button2.TextColor == Color.FromHex("#5adbfb") || Button3.TextColor == Color.FromHex("#5adbfb"))
                 {
                     Button1.TextColor = Color.Black;
                     Button2.TextColor = Color.Black;
                     Button3.TextColor = Color.Black;
                 }
-               return Color.FromHex("#5adbfb");
+                return Color.FromHex("#5adbfb");
             }
         }
         private void Button_Clicked(object sender, EventArgs e)

@@ -1,11 +1,6 @@
 ﻿using ConfectApp.Menu;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,7 +24,6 @@ namespace ConfectApp.List
                 return Button1.IsEnabled;
             }
         }
-
         public bool checkRating(int check)
         {
             if (check <= 0 || check > 5)
@@ -43,11 +37,11 @@ namespace ConfectApp.List
         {
             get
             {
-                if(rating <= 0)
+                if (rating <= 0)
                 {
                     rating = 1;
                 }
-                else if(rating > 5)
+                else if (rating > 5)
                 {
                     rating = 5;
                 }
@@ -55,7 +49,6 @@ namespace ConfectApp.List
             }
             set { rating = value; }
         }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             Vibration.Vibrate(TimeSpan.FromSeconds(0.03));

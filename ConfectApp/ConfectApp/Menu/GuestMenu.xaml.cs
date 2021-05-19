@@ -1,11 +1,5 @@
-﻿using Android.Content;
-using ConfectApp.adminMenu;
-using ConfectApp.List;
+﻿using ConfectApp.List;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +8,7 @@ namespace ConfectApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
-    public partial class GuestMenu : MasterDetailPage   
+    public partial class GuestMenu : MasterDetailPage
     {
         public GuestMenu(int check)
         {
@@ -122,10 +116,10 @@ namespace ConfectApp
             IsPresented = false;
 
             Detail = new NavigationPage(new MainPage())
-           {
-               BarBackgroundColor = Color.White,
-               BarTextColor = Color.Black,
-           };
+            {
+                BarBackgroundColor = Color.White,
+                BarTextColor = Color.Black,
+            };
         }
     }
 }

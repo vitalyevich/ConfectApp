@@ -1,10 +1,6 @@
 ﻿using ConfectApp.Menu;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
@@ -14,7 +10,7 @@ namespace ConfectApp.List
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class News : ContentPage
     {
-        public static List<Frame> formList = new List<Frame>(); // для админов с кнопкой ответа
+        public static List<Frame> formList = new List<Frame>();
 
         public RefreshView refreshView = new RefreshView
         {
@@ -63,8 +59,6 @@ namespace ConfectApp.List
             };
             formList.Add(frame);
         }
-
-
         public void addForm()
         {
             formList.Clear();

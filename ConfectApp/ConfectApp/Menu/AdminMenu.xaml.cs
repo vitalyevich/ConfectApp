@@ -1,15 +1,11 @@
 ﻿using ConfectApp.adminMenu;
 using ConfectApp.List;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ConfectApp 
+namespace ConfectApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AdminMenu : MasterDetailPage
@@ -72,7 +68,7 @@ namespace ConfectApp
                     BarTextColor = Color.Black
                 };
             }
-            else if(check == 3)
+            else if (check == 3)
             {
                 Detail = new NavigationPage(new Orders())
                 {

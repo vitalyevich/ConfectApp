@@ -36,8 +36,8 @@ namespace ConfectApp.List
             Refresh.Content = stack2;
 
         }
-        public static List<Frame> list = new List<Frame>(); // для админов с кнопкой ответа 
-        public static void LogPoint(Order user) // данные
+        public static List<Frame> list = new List<Frame>(); 
+        public static void LogPoint(Order user) 
         {
             StackLayout stackLayout = new StackLayout
             {

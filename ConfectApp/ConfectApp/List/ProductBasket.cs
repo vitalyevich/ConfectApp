@@ -1,11 +1,8 @@
 ﻿using ConfectApp.Menu;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ConfectApp.List
 {
@@ -13,10 +10,10 @@ namespace ConfectApp.List
     {
         public static int prCheck;
         public static string buttonText;
-        
+
         public static List<Int32> sumlist = new List<Int32>();
 
-        public static List<String> prodlist = new List<String>();  
+        public static List<String> prodlist = new List<String>();
         public static List<Grid> list = new List<Grid>();
 
         public static void Prod(Product p)
@@ -83,15 +80,15 @@ namespace ConfectApp.List
             Int32 productPrice = new Int32();
             productPrice = p.productPrice * Int32.Parse(labelCol.Text);
             Int32 productId = new Int32();
-            productId = p.productId; 
+            productId = p.productId;
 
             labelPrice.Text = productPrice.ToString() + " р.";
 
-            int price = Int32.Parse(labelPrice.Text.Replace("р.", " ")); 
+            int price = Int32.Parse(labelPrice.Text.Replace("р.", " "));
             sumlist.Add(price);
 
-            int priceCheck = 0; 
-            foreach (Int32 sum in sumlist)      
+            int priceCheck = 0;
+            foreach (Int32 sum in sumlist)
             {
                 priceCheck = priceCheck + sum;
             }
@@ -117,7 +114,7 @@ namespace ConfectApp.List
                     }
                     else
                     {
-                        DbWorking.ManipulationBasket(productId, 0); 
+                        DbWorking.ManipulationBasket(productId, 0);
                         Application.Current.MainPage = new UserMenu(3);
                     }
                 }

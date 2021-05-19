@@ -1,9 +1,5 @@
-﻿using ConfectApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
@@ -57,31 +53,31 @@ namespace ConfectApp.List
 
         public static void CreateFormAdmin(Review rev)
         {
-                string rating = String.Empty;
-                int check;
-                for (check = 0; check < rev.sum; check++)
-                {
-                    rating = rating + "★";
-                }
-                if (check < 5)
-                {
-                    int check1 = 5 - check;
-                    for (check = 0; check < check1; check++)
-                        rating = rating + "☆";
-                }
-                Image image = new Image
-                {
-                    Source = "close.png",
-                    Aspect = Aspect.AspectFit,
-                    HeightRequest = 25,
-                    WidthRequest = 25,
-                    Margin = new Thickness(0, -5, 0, 0)
-                };
-                StackLayout stackLayout = new StackLayout
-                {
-                    Orientation = StackOrientation.Horizontal,
-                    Spacing = 210,
-                    Children =
+            string rating = String.Empty;
+            int check;
+            for (check = 0; check < rev.sum; check++)
+            {
+                rating = rating + "★";
+            }
+            if (check < 5)
+            {
+                int check1 = 5 - check;
+                for (check = 0; check < check1; check++)
+                    rating = rating + "☆";
+            }
+            Image image = new Image
+            {
+                Source = "close.png",
+                Aspect = Aspect.AspectFit,
+                HeightRequest = 25,
+                WidthRequest = 25,
+                Margin = new Thickness(0, -5, 0, 0)
+            };
+            StackLayout stackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Spacing = 210,
+                Children =
                 {
                     new Label
                   {
@@ -92,20 +88,20 @@ namespace ConfectApp.List
                   },
                      image
                 }
-                };
+            };
 
-                Frame frame = new Frame
-                {
-                    Padding = new Thickness(0, 0, 0, 10),
-                    Margin = new Thickness(20, 10, 20, 0),
-                    CornerRadius = 8,
-                    HasShadow = false,
-                    Content =
-                  new StackLayout
+            Frame frame = new Frame
+            {
+                Padding = new Thickness(0, 0, 0, 10),
+                Margin = new Thickness(20, 10, 20, 0),
+                CornerRadius = 8,
+                HasShadow = false,
+                Content =
+              new StackLayout
+              {
+                  Margin = new Thickness(10),
+                  Children =
                   {
-                      Margin = new Thickness(10),
-                      Children =
-                      {
                   stackLayout,
                    new Label
                   {
@@ -123,36 +119,36 @@ namespace ConfectApp.List
                 FontFamily = "Ubuntu-Light.ttf#Ubuntu",
                 FontSize = 17
                   }
-                      }
                   }
-                };
+              }
+            };
 
-                int id = rev.id;
-                var TapGestureRecognizer = new TapGestureRecognizer();
-                TapGestureRecognizer.Tapped += (object sender, EventArgs e) =>
-                {
-                    Vibration.Vibrate(TimeSpan.FromSeconds(0.05));
-                    formList.Remove(frame);
-                    DbWorking.DeleteReviewIndex(id);
-                    Application.Current.MainPage = new AdminMenu(4);
-                };
-                image.GestureRecognizers.Add(TapGestureRecognizer);
+            int id = rev.id;
+            var TapGestureRecognizer = new TapGestureRecognizer();
+            TapGestureRecognizer.Tapped += (object sender, EventArgs e) =>
+            {
+                Vibration.Vibrate(TimeSpan.FromSeconds(0.05));
+                formList.Remove(frame);
+                DbWorking.DeleteReviewIndex(id);
+                Application.Current.MainPage = new AdminMenu(4);
+            };
+            image.GestureRecognizers.Add(TapGestureRecognizer);
 
-                formList.Add(frame);
+            formList.Add(frame);
         }
         public static void CreateFormUser(Review rev)
         {
             string rating = String.Empty;
             int check;
-            for(check = 0; check < rev.sum; check++)
+            for (check = 0; check < rev.sum; check++)
             {
                 rating = rating + "★";
             }
-            if(check < 5)
+            if (check < 5)
             {
                 int check1 = 5 - check;
                 for (check = 0; check < check1; check++)
-                rating = rating + "☆";
+                    rating = rating + "☆";
             }
 
             Frame frame = new Frame

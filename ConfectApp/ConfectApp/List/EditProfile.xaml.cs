@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +15,7 @@ namespace ConfectApp.List
             Entry1.Text = us.firstName;
             Entry2.Text = us.lastName;
             Entry3.Text = us.DOB.ToString("d");
-            if(us.gender == "М")
+            if (us.gender == "М")
             {
                 RadioButton1.IsChecked = true;
             }

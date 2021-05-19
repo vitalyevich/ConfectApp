@@ -1,111 +1,27 @@
-﻿using Plugin.DeviceInfo;
+﻿using ConfectApp.Menu;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Shapes;
-using ConfectApp.Menu;
+using Xamarin.Forms.Xaml;
 
 namespace ConfectApp.List
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Basket : ContentPage 
+    public partial class Basket : ContentPage
     {
         public Basket()
         {
-            ProductBasket.prodlist.Clear(); 
+            ProductBasket.prodlist.Clear();
             ProductBasket.sumlist.Clear();
             ProductBasket.list.Clear();
+
             InitializeComponent();
 
             Product p = DbWorking.ViewToBasket(0);
-            if (p == null)
-            {
-                ProdEmpty();
-            }
-            else
-            {
-                Frame frame = new Frame
-                {
-                    BackgroundColor = Color.FromHex("#F8F8F8"),
-                    Padding = new Thickness(20, 10, 20, 10),
-                    VerticalOptions = LayoutOptions.EndAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand,
-                    HasShadow = false      
-                };
 
-               Button button = new Button
-               {
-                   FontSize = 16,
-                   FontFamily = "Ubuntu-Bold.ttf#Ubuntu",
-                   Text = $"Оформить заказ на {ProductBasket.buttonText} р.\nДоставка = 0 р.",
-                   TextTransform = 0,
-                   TextColor = Color.White,
-                   BackgroundColor = Color.FromHex("#b39afd"),
-                   CornerRadius = 8,
-                   HeightRequest = 60
-               };
-
-                button.Clicked += (object sender, EventArgs e) =>
-                {
-                    Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
-                    int check = DbWorking.CheckIO();
-                    if (check == 0)
-                    {
-                        DisplayActionSheet("Кондитер", "Ок", null, "Ошибка! Для оплаты товара, необходимо зайти в учетную запись.");
-                        return;
-                    }
-                    Navigation.PushAsync(new BasketList());
-                };
-
-                frame.Content = button;
-
-                StackLayout st = new StackLayout
-                {
-                    Spacing = 0,
-                };
-
-                foreach (Grid grid in ProductBasket.list)
-                {
-                    st.Children.Add(grid);
-                    st.Children.Add(new Line
-                    {
-                        Margin = new Thickness(0, 10, 0, 0),
-                        HeightRequest = 0.2,
-                        X1 = 400,
-                        Stroke = Brush.LightGray,
-                        HorizontalOptions = LayoutOptions.Center
-                    });
-                }
-
-                StackLayout stackLayout = new StackLayout
-                {
-                    BackgroundColor = Color.White,
-                    Children =
-                                {
-                            st
-                                }
-                };
-
-                ScrollView scrollView = new ScrollView { Content = stackLayout };
-
-                StackLayout stack = new StackLayout
-                {
-                    BackgroundColor = Color.White,  
-                    Spacing = 0,
-                    Children =
-                                {
-                            scrollView,
-                            frame
-                                }
-                };
-                Content = stack;
-            }
+            if (p == null) { ProdEmpty(); }
+            else { ProdToBasket(); }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -119,6 +35,85 @@ namespace ConfectApp.List
             {
                 Application.Current.MainPage = new UserMenu(0);
             }
+        }
+
+        public void ProdToBasket()
+        {
+            Frame frame = new Frame
+            {
+                BackgroundColor = Color.FromHex("#F8F8F8"),
+                Padding = new Thickness(20, 10, 20, 10),
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                HasShadow = false
+            };
+
+            Button button = new Button
+            {
+                FontSize = 16,
+                FontFamily = "Ubuntu-Bold.ttf#Ubuntu",
+                Text = $"Оформить заказ на {ProductBasket.buttonText} р.\nДоставка = 0 р.",
+                TextTransform = 0,
+                TextColor = Color.White,
+                BackgroundColor = Color.FromHex("#b39afd"),
+                CornerRadius = 8,
+                HeightRequest = 60
+            };
+
+            button.Clicked += (object sender, EventArgs e) =>
+            {
+                Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
+                int check = DbWorking.CheckIO();
+                if (check == 0)
+                {
+                    DisplayActionSheet("Кондитер", "Ок", null, "Ошибка! Для оплаты товара, необходимо зайти в учетную запись.");
+                    return;
+                }
+                Navigation.PushAsync(new BasketList());
+            };
+
+            frame.Content = button;
+
+            StackLayout st = new StackLayout
+            {
+                Spacing = 0,
+            };
+
+            foreach (Grid grid in ProductBasket.list)
+            {
+                st.Children.Add(grid);
+                st.Children.Add(new Line
+                {
+                    Margin = new Thickness(0, 10, 0, 0),
+                    HeightRequest = 0.2,
+                    X1 = 400,
+                    Stroke = Brush.LightGray,
+                    HorizontalOptions = LayoutOptions.Center
+                });
+            }
+
+            StackLayout stackLayout = new StackLayout
+            {
+                BackgroundColor = Color.White,
+                Children =
+                                {
+                            st
+                                }
+            };
+
+            ScrollView scrollView = new ScrollView { Content = stackLayout };
+
+            StackLayout stack = new StackLayout
+            {
+                BackgroundColor = Color.White,
+                Spacing = 0,
+                Children =
+                                {
+                            scrollView,
+                            frame
+                                }
+            };
+            Content = stack;
         }
         public void ProdEmpty()
         {

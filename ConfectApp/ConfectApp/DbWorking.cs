@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data.SqlClient;
-using System.Net;
-using Plugin.DeviceInfo;
+﻿using ConfectApp.adminMenu;
 using ConfectApp.List;
-using ConfectApp.adminMenu;
+using Plugin.DeviceInfo;
+using System;
+using System.Data.SqlClient;
 
 namespace ConfectApp
 {
@@ -42,7 +39,7 @@ namespace ConfectApp
         public string phone;
         public string firstName;
     }
-    public class User 
+    public class User
     {
         public int IOApp;
         public int id;
@@ -169,7 +166,7 @@ namespace ConfectApp
             return false;
         }
         // добавляет id-телефона пользователя при регистрации
-        static public void AddDeviceID() 
+        static public void AddDeviceID()
         {
             if (!(DbWorking.checkDeviceID()))
             {
@@ -189,8 +186,8 @@ namespace ConfectApp
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                    reader.Close();
-                    return 1;
+                reader.Close();
+                return 1;
             }
             reader.Close();
             return 0;
@@ -213,7 +210,7 @@ namespace ConfectApp
             return -1;
         }
         // выбор меню пользователю
-        static public int UserMenu(string phone)    
+        static public int UserMenu(string phone)
         {
             string sql = $"SELECT D.deviceId,U.Role, U.Phone FROM Users U JOIN Device D ON U.Id = D.UserId " +
                 $"WHERE D.DeviceId = N'{deviceId}' AND U.Phone = N'{phone}'";
@@ -223,15 +220,15 @@ namespace ConfectApp
             User user = new User();
             while (reader.Read())
             {
-                    user.role = reader.GetInt32(reader.GetOrdinal("Role"));
-                    reader.Close();
-                    return user.role;
+                user.role = reader.GetInt32(reader.GetOrdinal("Role"));
+                reader.Close();
+                return user.role;
             }
             reader.Close();
-            return -1; 
+            return -1;
         }
         // обновляет данные о входе, выходе из аккаунта
-        static public void UpdateToIO(int check, string phone) 
+        static public void UpdateToIO(int check, string phone)
         {
             if (check == 1)
             {
@@ -277,7 +274,7 @@ namespace ConfectApp
             sqlCommand.ExecuteNonQuery();
         }
         // манипулирование товаров в корзине
-        static public void ManipulationBasket(int productId, int check) 
+        static public void ManipulationBasket(int productId, int check)
         {
             var sql = $"SELECT * FROM Basket WHERE N'{productId}'=ProductId AND DeviceId = (SELECT Id FROM Device WHERE DeviceId = N'{deviceId}')";
             SqlCommand sqlCommand = new SqlCommand(sql, connection);
@@ -324,7 +321,7 @@ namespace ConfectApp
                 p.productPrice = reader.GetInt32(reader.GetOrdinal("Price"));
                 p.basketAmount = 0 + reader.GetInt32(reader.GetOrdinal("BasketAmount"));
                 p.productId = reader.GetInt32(reader.GetOrdinal("Id"));
-                p.basketPrice = 1; 
+                p.basketPrice = 1;
 
                 if (click == 1)
                 {
@@ -391,7 +388,7 @@ namespace ConfectApp
             while (reader.Read())
             {
                 p.Date = Convert.ToString(p.Date + "\n" + reader.GetDateTime(reader.GetOrdinal("Date")).ToString("g"));
-                p.Point = Convert.ToString(p.Point + "\n" + ("+" + reader.GetInt32(reader.GetOrdinal("Point")) +" балл."));
+                p.Point = Convert.ToString(p.Point + "\n" + ("+" + reader.GetInt32(reader.GetOrdinal("Point")) + " балл."));
                 p.phone = p.phone + "\n" + reader.GetString(reader.GetOrdinal("Phone"));
                 p.tranc = p.tranc + "\n" + "Кэшбэк";
             }
@@ -439,7 +436,7 @@ namespace ConfectApp
             sqlCommand.ExecuteNonQuery();
         }
         // выводит данные о пользователе пользователю
-        static public User ViewUser() 
+        static public User ViewUser()
         {
             string sql = "SELECT FirstName, LastName, Phone ,DOB, 2 * COUNT(O.Id) AS Point, COUNT(O.Id) AS Count FROM Users U " +
                 $"JOIN Device D ON U.Id = D.UserId LEFT JOIN Orders O ON O.UserId = U.Id WHERE D.DeviceId = N'{deviceId}' " +
@@ -453,7 +450,7 @@ namespace ConfectApp
                 u.firstName = reader.GetString(reader.GetOrdinal("FirstName")) + " " + reader.GetString(reader.GetOrdinal("LastName"));
                 u.lastName = reader.GetString(reader.GetOrdinal("FirstName"));
                 u.phone = reader.GetString(reader.GetOrdinal("Phone"));
-                u.DOB = reader.GetDateTime(reader.GetOrdinal("DOB")); 
+                u.DOB = reader.GetDateTime(reader.GetOrdinal("DOB"));
                 u.point = reader.GetInt32(reader.GetOrdinal("Point"));
                 u.count = reader.GetInt32(reader.GetOrdinal("Count"));
                 reader.Close();
@@ -463,7 +460,7 @@ namespace ConfectApp
             return u;
         }
 
-        static public User User() 
+        static public User User()
         {
             string sql = $"SELECT * FROM Users U JOIN Device D ON U.Id = D.UserId WHERE D.DeviceId = N'{deviceId}'";
 
@@ -573,8 +570,8 @@ namespace ConfectApp
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                    reader.Close();
-                    return true;
+                reader.Close();
+                return true;
             }
             reader.Close();
             return false;
@@ -610,8 +607,8 @@ namespace ConfectApp
                 u.phone = reader.GetString(reader.GetOrdinal("Phone"));
                 u.total = reader.GetInt32(reader.GetOrdinal("Total"));
                 u.status = reader.GetString(reader.GetOrdinal("Status"));
-                u.products = reader.GetString(reader.GetOrdinal("Nomination")) + ": " +reader.GetString(reader.GetOrdinal("GPS")) + "\n" + u.phone + "\n" + u.firstName + 
-                    "\n---\n"+ "Комментарий: " + reader.GetString(reader.GetOrdinal("Comment")) +"\n---\n" + "Заберу заказ через " + reader.GetString(reader.GetOrdinal("Time")) + "\n--\n" + reader.GetString(reader.GetOrdinal("Products")) + "\n--\n"+
+                u.products = reader.GetString(reader.GetOrdinal("Nomination")) + ": " + reader.GetString(reader.GetOrdinal("GPS")) + "\n" + u.phone + "\n" + u.firstName +
+                    "\n---\n" + "Комментарий: " + reader.GetString(reader.GetOrdinal("Comment")) + "\n---\n" + "Заберу заказ через " + reader.GetString(reader.GetOrdinal("Time")) + "\n--\n" + reader.GetString(reader.GetOrdinal("Products")) + "\n--\n" +
                     "Форма оплаты: " + reader.GetString(reader.GetOrdinal("Payment")) + "\nСумма заказа: " + u.total;
                 Orders.CreateForm(u);
             }
@@ -648,7 +645,7 @@ namespace ConfectApp
                 rev.service = rev.service + reader.GetInt32(reader.GetOrdinal("Service"));
                 check = true;
             }
-            if(!check)
+            if (!check)
             {
                 rev.speed = 0;
                 rev.kitchen = 0;
@@ -723,14 +720,14 @@ namespace ConfectApp
             {
                 sql = $"SELECT COUNT(Id) AS Count FROM Orders WHERE DATEADD(day, -7, GETDATE()) <= GETDATE()";
             }
-            else if(check == 2)
+            else if (check == 2)
             {
                 sql = $"SELECT COUNT(Id) AS Count FROM Orders WHERE DATEADD(month, -1, GETDATE()) <= GETDATE()";
             }
-            else if(check == 3)
+            else if (check == 3)
             {
                 sql = $"SELECT COUNT(Id) AS Count FROM Orders WHERE DATEADD(year, -1, GETDATE()) <= GETDATE()";
-                
+
             }
             SqlCommand sqlCommand = new SqlCommand(sql, connection);
             SqlDataReader reader = sqlCommand.ExecuteReader();

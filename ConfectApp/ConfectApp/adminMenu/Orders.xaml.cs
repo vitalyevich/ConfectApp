@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
@@ -24,7 +20,7 @@ namespace ConfectApp.adminMenu
                 stack.Children.Add(layout);
                 stack.Children.Add(new Line
                 {
-                    X1 = 580, 
+                    X1 = 580,
                     Stroke = Brush.LightGray,
                     HorizontalOptions = LayoutOptions.Start,
                     Margin = new Thickness(0, 5, 0, 5)
@@ -32,10 +28,10 @@ namespace ConfectApp.adminMenu
             }
             Content = Refresh;
         }
-       public static List<StackLayout> stacks = new List<StackLayout> ();
-       public static void CreateForm(Order usOrder)
+        public static List<StackLayout> stacks = new List<StackLayout>();
+        public static void CreateForm(Order usOrder)
         {
-            Picker picker = new Picker 
+            Picker picker = new Picker
             {
                 TitleColor = Color.LightGray,
                 TextColor = Color.Black,
@@ -45,7 +41,7 @@ namespace ConfectApp.adminMenu
                 {
                 "Новый", "Принят", "Доставлен", "Отмена"
                 },
-                Margin = new Thickness(20,-11,0,0)
+                Margin = new Thickness(20, -11, 0, 0)
             };
 
             /////////////////////////
@@ -58,7 +54,7 @@ namespace ConfectApp.adminMenu
                 BackgroundColor = Color.FromHex("#0000ffff"),
                 Padding = new Thickness(0),
                 TextTransform = TextTransform.None,
-                Margin = new Thickness(-18,-26,0,-15)
+                Margin = new Thickness(-18, -26, 0, -15)
 
             };
             string txt = $"{usOrder.products}";
@@ -67,13 +63,13 @@ namespace ConfectApp.adminMenu
                 await App.Current.MainPage.DisplayAlert("Заказ", txt, "ОK");
             };
             //////////////////////
-            
+
             StackLayout stackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.Start,
-                Margin = new Thickness(10, 5,10,-5),
-                Children = 
+                Margin = new Thickness(10, 5, 10, -5),
+                Children =
                 {
                     new Label
                     {
@@ -130,7 +126,7 @@ namespace ConfectApp.adminMenu
             stacks.Add(stackLayout);
         }
 
-        public static void pickerColor(string txt, Picker picker)    
+        public static void pickerColor(string txt, Picker picker)
         {
             if (txt == "Принят")
             {

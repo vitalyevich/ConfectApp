@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,18 +25,18 @@ namespace ConfectApp.adminMenu
         async private void Button_Clicked(object sender, EventArgs e)
         {
             string click = await DisplayActionSheet("Пуш-рассылка", "Нет", "Отправить", "Не спеши отправлять, убедись, что всё правильно написано.");
-            if(click == "Отправить")
+            if (click == "Отправить")
             {
                 DbWorking.AddPush(Entry1.Text, Editor1.Text);
-                await DisplayActionSheet("Пуш-рассылка","Ок", null, "Отправка прошла успешно!");
+                await DisplayActionSheet("Пуш-рассылка", "Ок", null, "Отправка прошла успешно!");
                 Entry1.Text = String.Empty;
                 Editor1.Text = String.Empty;
             }
         }
 
         public bool button
-        {   
-           get
+        {
+            get
             {
                 Button1.IsEnabled = (Entry1.Text != String.Empty && Editor1.Text != String.Empty) ? true : false;
                 return Button1.IsEnabled;

@@ -33,7 +33,6 @@
                 <Label Margin="16,0,0,0" x:Name="label3" Style="{StaticResource label2Style}"/>
                 </StackLayout>
 
-
             <Button  VerticalOptions ="EndAndExpand" HorizontalOptions = "FillAndExpand" Clicked="Button_Clicked" FontSize = "16" FontFamily = "Ubuntu-Bold.ttf#Ubuntu" Text = "Добавить курьера"
                      TextTransform = "None" TextColor = "White" BackgroundColor = "#b39afd" HeightRequest = "60"/>
         

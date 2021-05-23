@@ -79,7 +79,7 @@ namespace ConfectApp
         static SqlConnection connection;
         static DbWorking()
         {
-            string cs = $"Data Source=192.168.0.105,1433;Initial Catalog=dbConfectApp;User ID=test;Password=test";
+            string cs = $"Data Source=192.168.100.26,1433;Initial Catalog=dbConfectApp;User ID=test;Password=test";
             connection = new SqlConnection(cs);
             connection.Open();
         }
@@ -282,26 +282,21 @@ namespace ConfectApp
             Product pr = new Product();
             while (reader.Read())
             {
-                pr.productId = reader.GetInt32(reader.GetOrdinal("productId"));
-                if (pr.productId == productId)
+                if (check == 1)
                 {
-                    if (check == 1)
-                    {
-                        pr.basketAmount = reader.GetInt32(reader.GetOrdinal("BasketAmount"));
-                        pr.basketAmount = ++pr.basketAmount;
-                    }
-                    else
-                    {
-                        pr.basketAmount = reader.GetInt32(reader.GetOrdinal("BasketAmount"));
-                        pr.basketAmount = --pr.basketAmount;
-                    }
-                    reader.Close();
-                    sql = $"UPDATE Basket SET BasketAmount = {pr.basketAmount} WHERE N'{productId}' = productId ";
-                    sqlCommand = new SqlCommand(sql, connection);
-                    sqlCommand.ExecuteNonQuery();
-                    reader.Close();
-                    return;
+                    pr.basketAmount = reader.GetInt32(reader.GetOrdinal("BasketAmount"));
+                    pr.basketAmount = ++pr.basketAmount;
                 }
+                else
+                {
+                    pr.basketAmount = reader.GetInt32(reader.GetOrdinal("BasketAmount"));
+                    pr.basketAmount = --pr.basketAmount;
+                }
+                reader.Close();
+                sql = $"UPDATE Basket SET BasketAmount = {pr.basketAmount} WHERE N'{productId}' = productId ";
+                sqlCommand = new SqlCommand(sql, connection);
+                sqlCommand.ExecuteNonQuery();
+                return;
             }
         }
         // выводит список товаров в корзине

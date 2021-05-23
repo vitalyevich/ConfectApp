@@ -30,7 +30,6 @@ namespace ConfectApp
 
         private void Entry1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Entry1.Text = checkLogin;
             Button1.IsEnabled = buttonCheck;        
         }
         private void Entry2_TextChanged(object sender, TextChangedEventArgs e)
@@ -73,22 +72,6 @@ namespace ConfectApp
             await Navigation.PushAsync(new Register());
         }
 
-        private string text;
-        public string checkLogin
-        {
-            get
-            {
-                if (Entry1.Text.Length == 13)
-                {
-                    if (Int64.TryParse(Entry1.Text.TrimStart('+', '3'), out long number) && Entry1.Text.Contains("+375"))
-                    {
-                        text = String.Format("{0:+3## (##) ###-##-##}", number);
-                        return text;
-                    }
-                }
-                return Entry1.Text;
-            }
-        }
         private void Entry1_Focused(object sender, FocusEventArgs e)
         {
             Frame1.BorderColor = Color.LightSkyBlue;

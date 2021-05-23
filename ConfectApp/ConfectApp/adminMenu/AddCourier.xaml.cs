@@ -91,23 +91,6 @@ namespace ConfectApp.adminMenu
             Frame3.BorderColor = Color.FromHex("#E8E8E8");
         }
 
-        private string text;
-        public string checkLogin
-        {
-            get
-            {
-                if (Entry2.Text.Length == 13)
-                {
-                    if (Int64.TryParse(Entry2.Text.TrimStart('+', '3'), out long number) && Entry2.Text.Contains("+375"))
-                    {
-                        text = String.Format("{0:+3## (##) ###-##-##}", number);
-                        return text;
-                    }
-                }
-                return Entry2.Text;
-            }
-        }
-
         public bool buttonCheck
         {
             get
@@ -119,7 +102,6 @@ namespace ConfectApp.adminMenu
 
         private void Entry2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Entry2.Text = checkLogin;
             Button1.IsEnabled = buttonCheck;
         }
 

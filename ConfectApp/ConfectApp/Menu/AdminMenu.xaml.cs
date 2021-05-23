@@ -15,7 +15,6 @@ namespace ConfectApp
             InitializeComponent();
             IsPresented = false;
             ListMenu(check);
-
         }
 
         public void ListMenu(int check)

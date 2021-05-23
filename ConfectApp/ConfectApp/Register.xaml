@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="ConfectApp.Register"
+             xmlns:Behaviors="clr-namespace:ConfectApp.Behaviors"
              BackgroundColor="White">
 
     <ContentPage.Resources>
@@ -43,7 +44,11 @@
             <RadioButton CheckedChanged="RadioButton2_CheckedChanged" RelativeLayout.XConstraint="110" x:Name="RadioButton2" Content="Женщина" Style="{StaticResource radioStyle}"/>
 
             <Frame x:Name="Frame1" RelativeLayout.YConstraint="50" Style="{StaticResource frameStyle}">
-                <Entry Focused="Entry1_Focused" Unfocused="Entry1_Unfocused" TextChanged="Entry1_TextChanged" Text="+375" x:Name="Entry1" Keyboard="Telephone" MaxLength="19" IsTextPredictionEnabled="True" Style="{StaticResource entryStyle}"/>
+                <Entry Focused="Entry1_Focused" Unfocused="Entry1_Unfocused" TextChanged="Entry1_TextChanged" Text="+375" x:Name="Entry1" Keyboard="Telephone" MaxLength="19" IsTextPredictionEnabled="True" Style="{StaticResource entryStyle}">
+                    <Entry.Behaviors>
+                        <Behaviors:MaskedBehavior Mask="+375 (XX) XXX-XX-XX" />
+                    </Entry.Behaviors>
+                </Entry>
             </Frame>
             <Frame WidthRequest="79" RelativeLayout.YConstraint="36" Style="{StaticResource frame2Style}"/>
             <Label RelativeLayout.YConstraint="40" Text="Номер телефона" Style="{StaticResource labelStyle}"/>

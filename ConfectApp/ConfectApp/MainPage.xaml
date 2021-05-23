@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConfectApp.MainPage"
+             xmlns:Behaviors="clr-namespace:ConfectApp.Behaviors"
              BackgroundColor="White">
 
     <ContentPage.Resources>
@@ -29,7 +30,11 @@
     <StackLayout Padding="50,-50,50,0" HorizontalOptions="FillAndExpand">
         <Image Source="icon.png" Aspect="AspectFill" Margin="-5,80,0,110" HeightRequest="180" />
         <Frame x:Name="Frame1" Style="{StaticResource frameStyle}">
-            <Entry Unfocused="Entry1_Unfocused" Focused="Entry1_Focused" TextChanged="Entry1_TextChanged" x:Name="Entry1" Text="+375" Placeholder=" Введите Ваш телефон:" FontSize="Small" Keyboard="Telephone" FontFamily="Ubuntu-Light.ttf#Ubuntu" IsTextPredictionEnabled="True" MaxLength="19"/>
+            <Entry Unfocused="Entry1_Unfocused" Focused="Entry1_Focused" TextChanged="Entry1_TextChanged" x:Name="Entry1" Text="+375" Placeholder=" Введите Ваш телефон:" FontSize="Small" Keyboard="Telephone" FontFamily="Ubuntu-Light.ttf#Ubuntu" IsTextPredictionEnabled="True" MaxLength="19">
+                <Entry.Behaviors>
+                    <Behaviors:MaskedBehavior Mask="+375 (XX) XXX-XX-XX" />
+                </Entry.Behaviors>
+            </Entry>
         </Frame>
 
         <Frame Padding="10" Margin="12,-52,163,0" BackgroundColor="White" HasShadow="False"/>

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConfectApp.adminMenu.AddCourier"
+             xmlns:Behaviors="clr-namespace:ConfectApp.Behaviors"
              BackgroundColor="White">
 
     <NavigationPage.TitleView>
@@ -24,7 +25,11 @@
                 <Label RelativeLayout.YConstraint="40" RelativeLayout.XConstraint="20"  Text="Имя" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>
 
                 <Frame x:Name="Frame2" RelativeLayout.YConstraint="110" RelativeLayout.XConstraint="5" RelativeLayout.WidthConstraint="280" Padding="0,0,0,0" CornerRadius="8" HasShadow="False" BorderColor="#E8E8E8">
-                <Entry MaxLength="19" Keyboard="Telephone" Unfocused="Entry2_Unfocused" TextChanged="Entry2_TextChanged" Text="+375" Focused="Entry2_Focused" x:Name="Entry2" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu" />
+                <Entry MaxLength="19" Keyboard="Telephone" Unfocused="Entry2_Unfocused" TextChanged="Entry2_TextChanged" Text="+375" Focused="Entry2_Focused" x:Name="Entry2" FontSize="Small" FontFamily="Ubuntu-Light.ttf#Ubuntu">
+                    <Entry.Behaviors>
+                        <Behaviors:MaskedBehavior Mask="+375 (XX) XXX-XX-XX" />
+                    </Entry.Behaviors>
+                </Entry>
                 </Frame>
                 <Frame Padding="10" Margin="12,-2,0,0" WidthRequest="48" BackgroundColor="White" HasShadow="False" RelativeLayout.XConstraint="5" RelativeLayout.YConstraint="100"/>
                 <Label RelativeLayout.YConstraint="100" RelativeLayout.XConstraint="20"  Text="Телефон" TextColor="Black" FontFamily="Ubuntu-Regular.ttf#Ubuntu"/>

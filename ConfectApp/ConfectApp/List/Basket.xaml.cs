@@ -151,7 +151,7 @@ namespace ConfectApp.List
             };
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e) // дублирование кода
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e) 
         {
             Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
             DbWorking.DeleteBasket();
@@ -160,8 +160,3 @@ namespace ConfectApp.List
         }
     }
 }
-
-
-
-//Vibration.Vibrate(TimeSpan.FromSeconds(0.03));
-//await Navigation.PushAsync(new BasketList());
